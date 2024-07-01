@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Party Organizer</title>
+  </head>
+  <body>
+    <h1>Party Organizer</h1>
+
+    <h2>Add Guest</h2>
+    <form action="/add_guest" method="post">
+      Name: <input type="text" name="name">
+      ID Number: <input type="text" name="id_number">
+      <input type="submit" value="Add Guest">
+    </form>
+
+    <h2>Mark Entered</h2>
+    <form action="/mark_entered" method="post">
+      ID Number: <input type="text" name="id_number">
+      <input type="submit" value="Mark Entered">
+    </form>
+
+    <h2>Confirm Attendance</h2>
+    <form action="/confirm_attendance" method="post">
+      ID Number: <input type="text" name="id_number">
+      <input type="submit" value="Confirm Attendance">
+    </form>
+
+    <h2>Guests List</h2>
+    <pre>{{ organizer.list_guests() }}</pre>
+
+    <h2>Report</h2>
+    <a href="/generate_report">Generate Report</a>
+
+    {% if message %}
+    <p><strong>{{ message }}</strong></p>
+    {% endif %}
+  </body>
+</html>
