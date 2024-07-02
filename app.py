@@ -11,7 +11,6 @@ name = st.text_input('Name')
 id_number = st.text_input('ID Number')
 if st.button('Add Guest'):
     message = organizer.add_guest(name, id_number)
-    print(organizer.list_guests())
     st.write(message)
 
 # Mark Entered

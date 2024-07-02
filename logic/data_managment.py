@@ -1,6 +1,18 @@
 import datetime
 from typing import List, Union
 from dataclasses import dataclass
+import os
+from json import loads, dumps
+
+MY_DATA_FILE = os.path.join(os.path.dirname(os.getcwd()), "data", "my_text.json")
+
+def _save_in_file(data_to_save):
+    with open(MY_DATA_FILE, "w") as file:
+        file.write(dumps(data_to_save))
+
+def _load_from_file():
+    with open(MY_DATA_FILE, "r") as file:
+        return loads(file.read())
 
 @dataclass
 class Guest:
